@@ -4,21 +4,27 @@ plugins {
 	id("org.springframework.boot") version "2.4.0"
 	id("io.spring.dependency-management") version "1.0.10.RELEASE"
 	kotlin("jvm") version "1.4.10"
-	kotlin("plugin.spring") version "1.4.10"
+	kotlin("plugin.spring") version "1.4.20"
 }
 
-group = "com.yasinshaw"
-version = "0.0.1-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_11
+allprojects {
+	group = "com.yasinshaw"
+	version = "0.0.1-SNAPSHOT"
+    apply(plugin = "kotlin")
 
-configurations {
-	compileOnly {
-		extendsFrom(configurations.annotationProcessor.get())
+	java.sourceCompatibility = JavaVersion.VERSION_11
+
+	configurations {
+		compileOnly {
+			extendsFrom(configurations.annotationProcessor.get())
+		}
 	}
-}
-
-repositories {
-	mavenCentral()
+	repositories {
+		mavenCentral()
+	}
+    dependencies {
+		implementation(kotlin("stdlib"))
+	}
 }
 
 dependencies {
@@ -41,5 +47,23 @@ tasks.withType<KotlinCompile> {
 	kotlinOptions {
 		freeCompilerArgs = listOf("-Xjsr305=strict")
 		jvmTarget = "11"
+	}
+}
+
+tasks {
+	fun createDir(path: String) {
+        val file = File(path)
+		if (!file.exists()) {
+			println("create dir $path")
+			file.mkdirs()
+		}
+	}
+	task("createDir") {
+		val dirs = arrayOf("src/main/kotlin", "src/main/resources", "src/test/kotlin", "src/test/resources")
+		for (subproject in subprojects) {
+			for (dir in dirs) {
+				createDir("${subproject.projectDir}/$dir")
+			}
+		}
 	}
 }
