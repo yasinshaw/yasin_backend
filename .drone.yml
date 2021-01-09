@@ -14,4 +14,4 @@ steps:
     commands:
       - chmod +x ./gradlew
       - echo "hello"
-      - ./gradlew clean
+      - ./gradlew clean test
