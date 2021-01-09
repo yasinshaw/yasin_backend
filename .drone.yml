@@ -1,10 +1,16 @@
 kind: pipeline
 name: default
-type: docker
+type: ssh
+
+server:
+  host: yasinshaw.com
+  user: root
+  ssh_key:
+    from_secret: ssh_key
 
 steps:
   - name: build
-    image: openjdk:8-jdk-alpine
+    image: openjdk:11-jdk-alpine
     commands:
       - chmod +x ./gradlew
       - ./gradlew clean build
