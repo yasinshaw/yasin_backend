@@ -10,7 +10,7 @@ server:
 
 steps:
   - name: build
-    image: openjdk:11-jdk-alpine
+    image: openjdk:11
     commands:
       - chmod +x ./gradlew
       - ./gradlew clean build
