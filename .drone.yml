@@ -6,4 +6,4 @@ steps:
     image: openjdk:11.0.9.1-jre-buster
     commands:
       - chmod +x ./gradlew
-      - ./gradlew clean build --info
+      - ./gradlew clean test
