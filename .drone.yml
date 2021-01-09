@@ -1,12 +1,6 @@
 kind: pipeline
 name: default
-type: ssh
-
-server:
-  host: 120.79.54.59
-  user: root
-  ssh_key:
-    from_secret: ssh_key
+type: docker
 
 steps:
   - name: build
