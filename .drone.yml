@@ -6,7 +6,7 @@ server:
   host: yasinshaw.com
   user: root
   ssh_key:
-    from_secret: $SSH_KEY
+    from_secret: ssh_key
 
 steps:
   - name: test
