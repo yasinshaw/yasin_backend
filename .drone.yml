@@ -3,7 +3,7 @@ name: default
 type: ssh
 
 server:
-  host: redspider.group
+  host: 120.79.54.59
   user: root
   ssh_key:
     from_secret: ssh_key
