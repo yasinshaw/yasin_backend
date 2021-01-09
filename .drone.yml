@@ -5,4 +5,5 @@ steps:
   - name: test
     image: openjdk:8-jdk-alpine
     commands:
+      - chmod +x ./gradlew
       - ./gradlew clean build
