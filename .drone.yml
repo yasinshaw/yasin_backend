@@ -3,7 +3,7 @@ name: default
 type: ssh
 
 server:
-  host: yasinshaw.com
+  host: redspider.group
   user: root
   ssh_key:
     from_secret: ssh_key
