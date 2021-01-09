@@ -9,9 +9,8 @@ server:
     from_secret: ssh_key
 
 steps:
-  - name: test
+  - name: build
     image: openjdk:8-jdk-alpine
     commands:
       - chmod +x ./gradlew
-      - echo "hello"
-      - ./gradlew clean test --stacktrace
+      - ./gradlew clean build
