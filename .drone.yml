@@ -13,4 +13,4 @@ steps:
     image: openjdk:11
     commands:
       - chmod +x ./gradlew
-      - ./gradlew clean build
+      - ./gradlew clean build --info
