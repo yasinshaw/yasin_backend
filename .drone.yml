@@ -2,6 +2,12 @@ kind: pipeline
 name: default
 type: ssh
 
+server:
+  host: yasinshaw.com
+  user: root
+  ssh_key:
+    from_secret: $SSH_KEY
+
 steps:
   - name: test
     image: openjdk:8-jdk-alpine
