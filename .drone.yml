@@ -2,8 +2,13 @@ kind: pipeline
 name: default
 
 steps:
-  - name: build
+  - name: test
     image: openjdk:11.0.9.1-jre-buster
     commands:
       - chmod +x ./gradlew
       - ./gradlew clean test
+  - name: build
+    image: openjdk:11.0.9.1-jre-buster
+    commands:
+      - chmod +x ./gradlew
+      - ./gradlew build
