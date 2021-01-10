@@ -7,3 +7,4 @@ steps:
     commands:
       - gradle --version
       - gradle test --no-daemon
+      - gradle build
