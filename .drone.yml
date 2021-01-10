@@ -3,12 +3,7 @@ name: default
 
 steps:
   - name: test
-    image: openjdk:11.0.9.1-jdk-buster
+    image: gradle:6.6.1-jdk11
     commands:
-      - chmod +x ./gradlew
-      - ./gradlew test --no-daemon
-  - name: build
-    image: openjdk:11.0.9.1-jdk-buster
-    commands:
-      - chmod +x ./gradlew
-      - ./gradlew build --no-daemon
+      - gradle --version
+      - gradle test --no-daemon
