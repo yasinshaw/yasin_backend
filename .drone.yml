@@ -9,4 +9,4 @@ steps:
   - name: build
     image: gradle:6.6.1-jdk11
     commands:
-      - gradle build
+      - gradle build --no-daemon
