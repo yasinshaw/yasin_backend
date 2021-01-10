@@ -19,7 +19,9 @@ allprojects {
 		}
 	}
 	repositories {
-		mavenCentral()
+		maven (
+			url = "http://maven.aliyun.com/nexus/content/groups/public"
+		)
 	}
     dependencies {
 		implementation(kotlin("stdlib"))
