@@ -8,7 +8,7 @@ steps:
       - name: gradle
         path: /home/gradle/.gradle
     commands:
-      - gradle test --parallel
+      - gradle test --parallel --no-daemon
 #  - name: build
 #    image: gradle:6.6.1-jdk11
 #    volumes:
@@ -17,7 +17,7 @@ steps:
 #    commands:
 #      - gradle build
 
-#volumes:
-#  - name: gradle
-#    host:
-#      path: /root/.gradle/
+volumes:
+  - name: gradle
+    host:
+      path: /root/.gradle/
