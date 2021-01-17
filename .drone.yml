@@ -8,7 +8,7 @@ steps:
       - name: gradle
         path: /home/gradle/.gradle
     commands:
-      - gradle test
+      - gradle test --parallel
 #  - name: build
 #    image: gradle:6.6.1-jdk11
 #    volumes:
