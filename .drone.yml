@@ -5,8 +5,8 @@ steps:
   - name: test
     image: gradle:6.6.1-jdk11
     commands:
-      - gradle test --no-daemon
+      - gradle test
   - name: build
     image: gradle:6.6.1-jdk11
     commands:
-      - gradle build --no-daemon
+      - gradle build
