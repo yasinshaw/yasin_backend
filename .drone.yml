@@ -6,7 +6,7 @@ steps:
     image: gradle:6.6.1-jdk11
     volumes:
       - name: gradle
-        path: /root/.gradle
+        path: /home/gradle/.gradle
     commands:
       - gradle test
 #  - name: build
