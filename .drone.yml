@@ -9,13 +9,13 @@ steps:
         path: /root/.gradle
     commands:
       - gradle test
-  - name: build
-    image: gradle:6.6.1-jdk11
-    volumes:
-      - name: gradle
-        path: /root/.gradle
-    commands:
-      - gradle build
+#  - name: build
+#    image: gradle:6.6.1-jdk11
+#    volumes:
+#      - name: gradle
+#        path: /root/.gradle
+#    commands:
+#      - gradle build
 
 volumes:
   - name: gradle
