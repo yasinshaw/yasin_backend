@@ -17,7 +17,7 @@ steps:
 #    commands:
 #      - gradle build
 
-volumes:
-  - name: gradle
-    host:
-      path: /root/.gradle/
+#volumes:
+#  - name: gradle
+#    host:
+#      path: /root/.gradle/
