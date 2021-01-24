@@ -7,7 +7,7 @@ spring:
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://yasinshaw.com:3306/yasinshaw2
     username: root
-    passowrd: ENC(ykvsa5NEQMNyNd5A3ATvsAuIYyknOp8D)
+    password: ENC(ykvsa5NEQMNyNd5A3ATvsAuIYyknOp8D)
 
 jasypt:
   encryptor:
