@@ -15,7 +15,7 @@ steps:
       - name: gradle
         path: /root/.gradle
     commands:
-      - gradle build --parallel --no-daemon
+      - gradle :adapter:bootJar --no-daemon
 
 volumes:
   - name: gradle
