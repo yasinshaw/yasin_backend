@@ -1,0 +1,10 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://yasinshaw.com:3306/yasinshaw2
+    username: root
+    password: ${DB_PASSWORD}

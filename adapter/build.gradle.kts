@@ -13,6 +13,7 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation("'com.github.ulisesbocchio:jasypt-spring-boot-starter:3.0.3")
     compileOnly("org.projectlombok:lombok")
     runtimeOnly("mysql:mysql-connector-java")
 //    runtimeOnly("com.h2database:h2")
