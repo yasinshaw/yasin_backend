@@ -10,19 +10,17 @@ steps:
         path: /home/gradle/.gradle
     commands:
       - gradle test --parallel --no-daemon
+      - gradle :adapter:bootJar --parallel --no-daemon
   - name: build
     image: gradle:6.6.1-jdk11
     volumes:
       - name: gradle
-        path: /root/.gradle
+        path: /home/gradle/.gradle
     commands:
       - gradle :adapter:bootJar --parallel --no-daemon
 
   - name: build docker image
     image: plugins/docker
-    environment:
-      DB_PASSWORD:
-        from_secret: db_password
     settings:
       username: yasinshaw
       password:
@@ -31,9 +29,6 @@ steps:
       registry: registry.cn-hangzhou.aliyuncs.com
       mirror: https://mzayqkhl.mirror.aliyuncs.com
       tags: latest
-      build_args:
-        db_password: $DB_PASSWORD
-
 
 volumes:
   - name: gradle
@@ -67,7 +62,10 @@ steps:
       - docker rm -f -v yasin_backend
 
   - name: start docker container
+    environment:
+      DB_PASSWORD:
+        from_secret: db_password
     commands:
-      - docker run -d --name=yasin_backend --restart=always -p 9090:8080 registry.cn-hangzhou.aliyuncs.com/yasinshaw/yasin_backend:latest
+      - docker run -d --name=yasin_backend --restart=always -p 9090:8080 -e DB_PASSWORD=$DB_PASSWORD registry.cn-hangzhou.aliyuncs.com/yasinshaw/yasin_backend:latest
 depends_on:
   - build
