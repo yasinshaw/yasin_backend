@@ -62,9 +62,9 @@ steps:
 
   - name: start docker container
     environment:
-      DB_PASSWORD:
-        from_secret: db_password
+      JASYPT_ENCRYPTOR_PASSWORD:
+        from_secret: jasypt_pwd
     commands:
-      - docker run -d --name=yasin_backend --restart=always -p 9090:8080 -e DB_PASSWORD=$DB_PASSWORD registry.cn-hangzhou.aliyuncs.com/yasinshaw/yasin_backend:latest
+      - docker run -d --name=yasin_backend --restart=always -p 9090:8080 -e JASYPT_ENCRYPTOR_PASSWORD=$JASYPT_ENCRYPTOR_PASSWORD registry.cn-hangzhou.aliyuncs.com/yasinshaw/yasin_backend:latest
 depends_on:
   - build
