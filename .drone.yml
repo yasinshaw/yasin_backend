@@ -16,7 +16,7 @@ steps:
       - name: gradle
         path: /root/.gradle
     commands:
-      - gradle :adapter:bootJar --no-daemon
+      - gradle :adapter:bootJar --parallel --no-daemon
 
   - name: build docker image
     image: plugins/docker
