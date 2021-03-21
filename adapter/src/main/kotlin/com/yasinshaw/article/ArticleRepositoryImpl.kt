@@ -19,11 +19,13 @@ class ArticleRepositoryImpl @Autowired constructor(
         }.orElseThrow();
     }
 
-    override fun save(article: Article) {
-        articleDao.save(ArticleDO(
+    override fun save(article: Article): Long {
+        val articleDO = ArticleDO(
             id = article.id,
             title = article.title,
             content = article.content,
-        ));
+        )
+        articleDao.save(articleDO);
+        return articleDO.id!!
     }
 }
