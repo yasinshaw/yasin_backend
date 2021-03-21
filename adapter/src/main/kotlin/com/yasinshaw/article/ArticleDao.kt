@@ -1,6 +1,5 @@
-package com.yasinshaw.data.dao
+package com.yasinshaw.article
 
-import com.yasinshaw.data.entity.ArticleDO
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 

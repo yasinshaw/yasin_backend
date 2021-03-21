@@ -1,6 +1,6 @@
-package com.yasinshaw.application.repository
+package com.yasinshaw.application.article
 
-import com.yasinshaw.domain.Article
+import com.yasinshaw.domain.article.Article
 
 interface ArticleRepository {
     fun findArticleById(id: Long): Article;

@@ -1,9 +1,7 @@
-package com.yasinshaw.repository
+package com.yasinshaw.article
 
-import com.yasinshaw.application.repository.ArticleRepository
-import com.yasinshaw.data.dao.ArticleDao
-import com.yasinshaw.data.entity.ArticleDO
-import com.yasinshaw.domain.Article
+import com.yasinshaw.application.article.ArticleRepository
+import com.yasinshaw.domain.article.Article
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 

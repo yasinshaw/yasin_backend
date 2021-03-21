@@ -1,4 +1,4 @@
-package com.yasinshaw.data.entity
+package com.yasinshaw.article
 
 import java.time.LocalDateTime
 import javax.persistence.Entity

@@ -1,14 +1,12 @@
-package com.yasinshaw.repository
+package com.yasinshaw.article
 
 import com.yasinshaw.BaseIntegrationTest
-import com.yasinshaw.data.entity.ArticleDO
-import com.yasinshaw.domain.Article
+import com.yasinshaw.domain.article.Article
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager
-import org.springframework.context.annotation.ComponentScan
 
 @DataJpaTest
 internal class ArticleRepositoryImplTest @Autowired constructor(

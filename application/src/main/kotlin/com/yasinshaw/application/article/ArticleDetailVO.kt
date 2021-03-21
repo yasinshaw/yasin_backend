@@ -1,7 +1,7 @@
-package com.yasinshaw.application.vo
+package com.yasinshaw.application.article
 
 data class ArticleDetailVO(
         val id: Long,
         val title: String,
-        val detail: String
+        val content: String
 )
