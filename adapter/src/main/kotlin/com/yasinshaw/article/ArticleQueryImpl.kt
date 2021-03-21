@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component
 class ArticleQueryImpl constructor(
     private val articleDao: ArticleDao,
 ) : ArticleQuery {
-    override fun getArticleDetailById(id: Long): ArticleDetailVO =
+    override fun getArticleDetailById(id: Long): ArticleDetailVO? =
         articleDao.findById(id).map { convertArticleDO2ArticleDetailVO(it) }.orElse(null)
 
     private fun convertArticleDO2ArticleDetailVO(articleDO: ArticleDO): ArticleDetailVO {
